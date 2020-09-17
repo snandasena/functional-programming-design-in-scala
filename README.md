@@ -1,2 +1,2 @@
-# functional-programming-desion-in-scala
+# functional-programming-design-in-scala
 Scala
