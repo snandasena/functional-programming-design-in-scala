@@ -19,12 +19,26 @@ object PatternMatching {
 
   def main(args: Array[String]): Unit = {
     val json = JObj(Map(
-      "test"->JStr("value"),
+      "test" -> JStr("value"),
       "testobj" -> JObj(Map(
         "key1" -> JNum(1)
       ))
     ))
 
     println(show(json))
+
+    // a function example
+    val f: String => String = {
+      case "ping" => "pong"
+    }
+
+    println(f("ping"))
+
+    val pf: PartialFunction[String, String] = {
+      case "ping" => "pong"
+    }
+
+    println(pf.isDefinedAt("ping"))
+    println(pf.isDefinedAt("test"))
   }
 }
